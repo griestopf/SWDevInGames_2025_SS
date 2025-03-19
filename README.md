@@ -1,2 +1,4 @@
-# Orga
-Organisation für das Fach Code 3 in GMB
+# Software-Entwicklung interaktiver Medien
+
+Unterlagen für den Unterricht im Master Medieninformatik im SoSe 2025 an der HFU
+

@@ -1,11 +1,11 @@
 +++
-title = 'The Scene Graph'
+title = 'A Simple Cube'
 date = 2024-09-28T15:27:29+02:00
-draft = false
-weight = 70
+draft = true
+weight = 30
 +++
 
-A simple scene graph implementation with hierarchies. Scene traversal.
+Flat shaded cube with rotation and orthographic camera
 
 ## Assignment
 
