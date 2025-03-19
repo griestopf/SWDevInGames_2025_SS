@@ -5,7 +5,9 @@ draft = false
 weight = 10 
 +++
 
-## Lecture 1
+## Aufgabe
+
+Entwicklungsumgebung installieren
 
 - Godot Installieren (Produktiv)
 - Godot Bauen
@@ -21,9 +23,10 @@ weight = 10
   - Bei GitHub als Student registrieren
 
 
-
 ## Resourcen
 
+- [Godot-Engine] & Download Produktiversion(https://godotengine.org/)
+- [Einführungstutorial 3+h](https://www.youtube.com/watch?v=A3R6T1h0ln8)
 - Godot Docs: 
   - [Building from Source](https://docs.godotengine.org/en/stable/contributing/development/compiling/index.html#)
   - [Introduction to the build system](https://docs.godotengine.org/en/stable/contributing/development/compiling/introduction_to_the_buildsystem.html)
