@@ -34,6 +34,10 @@ weight = 0
 - Buch: "Game Engine Architecture" Third Edition von Jason Gregory (ISBN 9781138035454)
 
 
+## [hfu.li/SWD-GAM](https://hfu.li/SWD-GAM)
+
+![QR-Code](./QR-Code-SWD-GAM.svg)
+
 <!--
 
 
