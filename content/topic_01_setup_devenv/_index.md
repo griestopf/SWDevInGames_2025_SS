@@ -1,11 +1,10 @@
 +++
 title = 'Entwicklungsumgebung einrichten'
-date = 2024-09-28T15:27:29+02:00
 draft = false
 weight = 10 
 +++
 
-## Aufgabe
+## Inhalte
 
 Entwicklungsumgebung installieren
 
@@ -21,6 +20,22 @@ Entwicklungsumgebung installieren
   - Mit scons eine Visual-Studio-Solution und Visual-Studio-Project-Dateien erzeugen: vsproj
 - GitHub Copilot installieren
   - Bei GitHub als Student registrieren
+
+Alternativ: Entwicklung mit Visual Studio Code (statt VS IDE)
+
+- VS-Code installieren und für C++ aufsetzen
+  - C/C++ Extension und C++ compiler installieren. [Video](http://code.visualstudio.com/docs/cpp/introvideos-cpp)
+  - Compiler muss vermutlich nicht mehr installiert werden, wenn zuvor bereits VS IDE mit C++ Workload installiert wurde.
+  - Empfohlen: Statt des der [C/C++ Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools) wie im Video beschrieben kann die [C/C++ Extension Pack Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack) installiert werden, die zusätzlich zur C/C++ Extension auch Themes und CMake Tools installiert
+  - In VS-Code: 
+    - mit `Ctrl`+`P` die Command-Box öffnen
+    - `>Wel` eingeben
+    - "Welcome: Open Walkthrough" auswählen
+    - "Get Started with C++ development" auswählen
+    - Instruktionen folgen
+  - Zum Bauen und Debuggen allerhand Einstellungen vornehmen...
+    - VS Code nur über die "Developer Shell/Console" (Windows-Taste) starten
+    - Compiler (cl.exe) muss in VS-Code hinterlegt werden. Diesen unterhalb des Startverzeichnisses der Developer Console irgendwo in "bin" suchen.
 
 
 ## Resourcen

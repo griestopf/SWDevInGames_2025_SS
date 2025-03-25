@@ -8,6 +8,35 @@ weight = 0
 
 
 ## Ablauf Vorlesung
+
+| Datum      | Inhalt                                                                                          |
+|------------|-------------------------------------------------------------------------------------------------|
+| Mi 19. Mrz | Veranstaltungsinfo. Installationshinweise                                                       |
+| Mi 26. Mrz | C/C++ Einführung: Hello, World. |
+| Mi 02. Apr | C/C++ Einführung: memory. Reference vs. Value Semantik. Pointer, Arrays und Strings              |
+| Mi 09. Apr | C/C++-Einführung: Std.-Libraries                                                                |
+| Mi 16. Apr | Godot-Engine Bauen                                                                              |
+| Mi 23. Apr | Game-Engine Architecture: Initialization and Game Loop                                          |
+| Mi 30. Apr | G-E-A: Scene Management: Class library of scene parts                                           |
+| Mi 07. Mai | G-E-A: Scene Management: Collections and Trees                                                  |
+| Mi 14. Mai | G-E-A: Scene Management: Collections and Trees                                                  |
+| Mi 21. Mai | G-E-A: Scene Management: Scene-Traversal                                                        |
+| Mi 28. Mai | G-E-A: Render-Engine abstraction                                                                |
+| Mi 04. Jun | G-E-A: Render-Engine abstraction                                                                |
+| Mi 11. Jun | Pfingsten                                                                                       |
+| Mi 18. Jun | G-E-A: Platform independence                                                                    |
+| Mi 25. Jun | Puffer                                                                                          |
+| Mi 02. Jul | Puffer                                                                                          |
+
+
+## Resourcen
+
+- Buch: "Game Engine Architecture" Third Edition von Jason Gregory (ISBN 9781138035454)
+
+
+<!--
+
+
 - Bauen und Debuggen der Godot Engine
 - C++ Crash Course
 - Struktur ausgewählter Teile einer Game Engine am Beispiel von Godot
@@ -31,12 +60,12 @@ weight = 0
 - NPC Pathfinding
 - ...
 
-## Resourcen
-
-- Buch: "Game Engine Architecture" Third Edition von Jason Gregory (ISBN 9781138035454)
 
 
-<!--
+
+
+
+
 
 ## Lecture Pool
 
