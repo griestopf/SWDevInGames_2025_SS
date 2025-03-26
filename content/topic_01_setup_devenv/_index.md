@@ -23,6 +23,7 @@ Entwicklungsumgebung installieren
 
 Alternativ: Entwicklung mit Visual Studio Code (statt VS IDE)
 
+- Anleitung/Tutorial auf der [VS-Code-Seite für C++](https://code.visualstudio.com/docs/languages/cpp)
 - VS-Code installieren und für C++ aufsetzen
   - C/C++ Extension und C++ compiler installieren. [Video](http://code.visualstudio.com/docs/cpp/introvideos-cpp)
   - Compiler muss vermutlich nicht mehr installiert werden, wenn zuvor bereits VS IDE mit C++ Workload installiert wurde.
