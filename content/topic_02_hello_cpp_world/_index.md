@@ -14,7 +14,6 @@ weight = 20
   - Geschichte
   - Einsatzgebiete
   - compiled vs interpreted
-  - managed vs. unmanaged
   - Compiler und Linker
   - Dateitypen: headers, sources, obj, lib, dll/so und exe files
 
