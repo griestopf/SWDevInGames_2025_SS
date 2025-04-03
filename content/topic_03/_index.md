@@ -73,12 +73,12 @@ int* p_my_var = &my_var;
 int b = *p_my_var;
 *p_my_var = 43;
 ```
-### Erklärung:
+#### Erklärung
 - `int* p_my_var = &my_var;` speichert die Speicheradresse von `my_var` in `p_my_var`.
 - `int b = *p_my_var;` liest den Wert, auf den der Zeiger zeigt.
 - `*p_my_var = 43;` ändert den Wert des Speichers, auf den `p_my_var` zeigt.
 
-#### Fragen:
+#### Fragen
 - Was steht nach der Deklaration von `b` in der Variablen? → `42`
 - Was steht in `my_var` nach Ausführung der letzten Zeile? → `43`
 
@@ -89,7 +89,6 @@ Zeiger (die eigentlich Speicheradressen sind) werden durch einen Pfeil dargestel
 ![Notation_Variablen](images/02_pointer_on_int.png)
 
 
----
 
 ### Zeiger auf Objekte
 ```cpp
@@ -101,7 +100,6 @@ public:
 ```
 Die Klasse `MeineKlasse` hat zwei öffentliche Attribute: `ersterWert` und `zweiterWert`.
 
-### Objekte und Zeiger auf Objekte
 ```cpp
 MeineKlasse mein_objekt;
 mein_objekt.ersterWert = 1;
@@ -124,7 +122,7 @@ p_mein_neues_obj->zweiterWert = 20;
 ```
 Hier wird ein Objekt dynamisch auf dem Heap erstellt.
 
-#### Frage:
+#### Frage
 - Was steht in `mein_objekt.ersterWert`? → `42`
 
 #### Notationssystem
@@ -139,8 +137,6 @@ Mit `new` erzeugter Speicher ist nicht mit der Lebenszeit des Kontextes (z. B. d
 
 
 
-
-
 ### Arrays und Strings
 ```cpp
 int my_int_array[5] = {1, 2, 3, 4, 5};
@@ -151,7 +147,7 @@ char my_string[20] = "Hallo, Welt!";
   - Die ersten zwölf Einträge (an den Indizes 0..11) enthalten die Zeichen von `'H'`bis `'!'`
   - Der letzte Eintrag (am Index 12) enthält den Wert `0` (den char `'\0'`) als Markierung, dass der String dort endet.
 
-### Zeiger auf Arrays und Strings
+#### Zeiger auf Arrays und Strings
 ```cpp
 int *p_ints = my_int_array;
 char *p_string = my_string;
