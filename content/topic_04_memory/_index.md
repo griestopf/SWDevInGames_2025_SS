@@ -56,12 +56,15 @@ MyExtClass::~MyExtClass() { std::cout << "Destructor called!" << std::endl; }
     
 void MyExtClass::myFunction() { std::cout << "Function called!" << std::endl; } // Member function
 ```
+### Templates
+
+Eine Ausnahme der Regel, dass .h-Dateien nur Deklarationen enthalten, sind C++_Templates_. Das sind Klasse-Schablonen, in denen ein oder mehrere verwendete Typen noch nicht bekannt sind. In anderen Programmiersprachen heißen solche Mechanismen auch _Generics_. In C++ erzeugt der Compiler erst bei Verwendung eines Templates eine konkrete Klasse. Daher werden üblicherweise auch die Implementierungen für Templates in Header-Dateien geschrieben.
+
+---
 
 ## Value-Semantik (automatische Variablen) vs. Reference-Semantik (pointer mit new/delete) vs. Smart Pointer.
 
 Dieser Abschnitt erklärt, wie man in C++ mit **Objekten**, **Zeigern** und **Smart Pointern** umgeht – anhand der Beispielklasse `MyClass`.
-
-Eine Ausnahme der Regel, dass .h-Dateien nur Deklarationen enthalten, sind C++_Templates_. Das sind Klasse-Schablonen, in denen ein oder mehrere verwendete Typen noch nicht bekannt sind. In anderen Programmiersprachen heißen solche Mechanismen auch _Generics_. In C++ erzeugt der Compiler erst bei Verwendung eines Templates eine konkrete Klasse. Daher werden üblicherweise auch die Implementierungen für Templates in Header-Dateien geschrieben.
 
 ---
 
