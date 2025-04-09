@@ -9,11 +9,11 @@ weight = 40
 
 In vielen neueren Sprachen kann Source-Code in wiederverwendbare Einheiten kompiliert werden. In C# sind das .dll-Dateien, in Java .jar-Files. Derartige Module erfüllen gleichzeitig zwei Aufgaben
 
-1. Sie enthalten den vorkompilierten Code, so dass er aus anderen Modulen aufgerufen werden kann.
+1. Sie enthalten den vorkompilierten, direkt ausführbaren Code, der aus anderen Modulen aufgerufen werden kann.
 
-2. Sie enthalten Informationen für den Compiler, so dass dieser Quell-Code, der die in den Modulen enthaltenen Code benutzt, korrekt übersetetzen kann. 
+2. Sie enthalten Informationen für den Compiler, so dass dieser Quell-Code, der die in den Modulen enthaltenen Code benutzt, korrekt übersetzen kann. 
 
-In C++ gibt es diverse Möglichkeiten, vorkompilierten Code zu erzeugen - dieser wird in .lib, in .dll oder in .so-Dateien gehalten. Allen diesen Formaten ist gleich, dass dort KEINE Informationen für den Compiler enthalten sind, wie der darin enthaltene Code verwendet werden kann, sondern lediglich der für die Ausführung notwendige Maschinencode.
+In C++ gibt es diverse Formate für vorkompilierten Code, z. B. .lib, .dll oder .so-Dateien. Allen diesen Formaten ist gleich, dass dort KEINE Informationen für den Compiler enthalten sind, wie der darin enthaltene Code verwendet werden kann, sondern lediglich der für die Ausführung notwendige Maschinencode.
 
 Das Gleiche gilt für die in einem Compile-Schritt von mehreren .cpp-Dateien erzeugten .obj-Dateien. Damit Code aus einer .cpp-Datei in einer anderen cpp-Datei verwendet werden kann, müssen alle notwendigen Informationen geteilt werden. Das geht über so genannte Header-Dateien. Header-Dateien enthalten C++-Source-Code. Allerdings sind dort üblicherweise nur _Deklarationen_ enthalten, also Klassen-Deklarationen und Funktions- und Methoden-_Signaturen_. Der eigentliche ausführbare Code, der in C++ immer in Funktions- und Methoden-Rümpfen (innerhalb von `{` und `}) steht, befindet sich dann in .cpp-Dateien.
 
@@ -60,6 +60,8 @@ void MyExtClass::myFunction() { std::cout << "Function called!" << std::endl; } 
 ## Value-Semantik (automatische Variablen) vs. Reference-Semantik (pointer mit new/delete) vs. Smart Pointer.
 
 Dieser Abschnitt erklärt, wie man in C++ mit **Objekten**, **Zeigern** und **Smart Pointern** umgeht – anhand der Beispielklasse `MyClass`.
+
+Eine Ausnahme der Regel, dass .h-Dateien nur Deklarationen enthalten, sind C++_Templates_. Das sind Klasse-Schablonen, in denen ein oder mehrere verwendete Typen noch nicht bekannt sind. In anderen Programmiersprachen heißen solche Mechanismen auch _Generics_. In C++ erzeugt der Compiler erst bei Verwendung eines Templates eine konkrete Klasse. Daher werden üblicherweise auch die Implementierungen für Templates in Header-Dateien geschrieben.
 
 ---
 
