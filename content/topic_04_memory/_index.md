@@ -143,6 +143,14 @@ int main() {
 
 ## Implementierung eines benutzerdefinierten `SmartPointer` mit Referenzzählung
 
+### Managed vs. Unmanaged
+
+In den meisten der aktuell verwendeten Programmiersprachen wie C#, Python, Java, JavaScript, Typescript ist es möglich, Objekte in Referenz-Semantik ("auf dem Heap") zu erzeugen, ohne sich darum kümmern zu müssen, dass der dafür reservierte Speicher oder weitere von den Objekten verwendete Ressourcen wieder frei gegeben werden, sobald das Objekt nicht mehr benötigt wird. Das geht, weil in diesen Sprachen eine Speicherverwaltung eingebaut ist, die jedes während des Programmlaufs angeforderte Memory-Häppchen überwacht. Von Zeit zu Zeit läuft dann ein *Garbage Collector* und gibt nicht mehr benutzten Speicher frei. Auf Grund dieser nicht unerheblichen Verwaltungs-Mechanik, die in jedes noch so kleine Programm in diesen Sprachen automatisch eingebaut ist, werden diese Sprachen auch _managed_ genannt. 
+
+In C++ existiert kein solcher eingebauter Mechanismus, daher zählt C++ zu den _unmanaged_ Programmiersprachen. Eine weitere aktuelle Programmiersprache, die ebenfalls unmanaged ist, weil kein Garbage Collector existiert, ist **Rust**. Im Gegensatz zu C++ verfügt Rust über andere, einfachere Mechanismen (ein so genanntes *ownership* System), um die üblichen Speicherfehler (Speicher nicht allokiert, speicher bereits frei gegeben) zu umgehen.
+
+Um in C++ ebenfalls eine rudimentäre Speicherverwaltung zu implementieren, die die häufigsten Fehler im Umgang mit unmanaged Speicher zu umgehen, verwendet man häufig so genannte SmartPointer mit Referenz-Zählung.
+
 Dieser Abschnitt erklärt, wie man einen **einfachen referenzzählenden Smart Pointer** in C++ implementiert – ähnlich wie `std::shared_ptr`. Dieser `SmartPointer` verwaltet den Speicher eines Objekts automatisch und sorgt dafür, dass es nur gelöscht wird, wenn keine weiteren Referenzen darauf existieren.
 
 ---
@@ -259,6 +267,13 @@ int main() {
 - Kein Schutz vor **Zyklischen Referenzen**
 
 ---
+
+### Was bedeutet das `template<typename T>` und das `T`?
+
+Ein C++ Template ist eine generische Schablone (hier für eine Klassendeklaration), die es ermöglicht, Klassen oder Funktionen für verschiedene Datentypen zu definieren, ohne den Code mehrfach schreiben zu müssen. In obigem Code wird ein Template (template <typename T>) verwendet, um die Klasse SmartPointer generisch zu gestalten. Der Platzhalter T steht für den Datentyp des verwalteten Objekts, der erst bei der Instanziierung der Klasse festgelegt wird (z. B. SmartPointer<int> für einen int). Dadurch kann der SmartPointer beliebige Objekttypen verwalten, ohne dass für jeden Typ eine eigene Klasse geschrieben werden muss.
+
+Templates in C++ werden üblicherweise in Header-Dateien geschrieben, weil sie zur Kompilierzeit vollständig definiert sein müssen. 
+
 
 
 ### Fazit
