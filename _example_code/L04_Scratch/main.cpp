@@ -3,6 +3,8 @@
 #include "my_class.h"
 
 
+
+
 int main() {
 
     MyClass my_object(43);

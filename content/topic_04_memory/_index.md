@@ -158,7 +158,6 @@ Dieser Abschnitt erklärt, wie man einen **einfachen referenzzählenden Smart Po
 ### Code: `SmartPointer`-Klasse
 
 ```cpp
-```cpp
 // Implementierung eines referenzzählenden Smart Pointers
 template <typename T>
 class SmartPointer {
