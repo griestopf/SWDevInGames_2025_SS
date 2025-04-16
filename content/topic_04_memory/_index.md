@@ -158,64 +158,61 @@ Dieser Abschnitt erklärt, wie man einen **einfachen referenzzählenden Smart Po
 ### Code: `SmartPointer`-Klasse
 
 ```cpp
-// Implementation of a reference counting smart pointer
+```cpp
+// Implementierung eines referenzzählenden Smart Pointers
 template <typename T>
 class SmartPointer {
 private:
-    T* ptr;        // Roher Zeiger auf das verwaltete Objekt
-    int* refCount; // Zeiger auf den Referenzzähler
+    T* ptr;                 // Zeiger auf das verwaltete Objekt
+    unsigned* refCount;    // Zeiger auf den Referenzzähler
 
 public:
     // Konstruktor
-    SmartPointer(T* p = nullptr) : ptr(p), refCount(new int(1)) { }
+    SmartPointer(T* p = nullptr) : ptr(p), refCount(new unsigned(1)) {}
 
     // Kopierkonstruktor
-    SmartPointer(const SmartPointer& sp) : ptr(sp.ptr), refCount(sp.refCount) {
-        (*refCount)++; // Referenzzähler erhöhen
+    SmartPointer(const RefCountedSmartPointer& other) 
+        : ptr(other.ptr), refCount(other.refCount) {
+        ++(*refCount); // Referenzzähler erhöhen
+    }
+
+    // Zuweisungsoperator
+    SmartPointer& operator=(const SmartPointer& other) {
+        if (this != &other) {
+            release(); // Aktuelles Objekt freigeben
+            ptr = other.ptr;
+            refCount = other.refCount;
+            ++(*refCount); // Referenzzähler erhöhen
+        }
+        return *this;
     }
 
     // Destruktor
     ~SmartPointer() {
+        release(); // Objekt freigeben
+    }
+
+    // Dereferenzierungsoperator
+    T& operator*() const { return *ptr; }
+
+    // Zugriff auf Member
+    T* operator->() const { return ptr; }
+
+    // Gibt die Anzahl der Referenzen zurück
+    unsigned use_count() const { return *refCount; }
+
+private:
+    // Freigabe des verwalteten Objekts
+    void release() {
         if (--(*refCount) == 0) {
-            delete ptr;       // Objekt löschen
-            delete refCount; // Zähler löschen
+            delete ptr;
+            delete refCount;
         }
-    }
-
-    // Dereferenzierungsoperator (*)
-    T& operator*() { return *ptr; }
-
-    // Zugriff auf Member (->)
-    T* operator->() { return ptr; }
-
-    // Zuweisungsoperator: anderer SmartPointer
-    SmartPointer& operator=(const SmartPointer& sp) {
-        if (this != &sp) {
-            if (--(*refCount) == 0) {
-                delete ptr;
-                delete refCount;
-            }
-            ptr = sp.ptr;
-            refCount = sp.refCount;
-            (*refCount)++;
-        }
-        return *this;
-    }
-
-    // Zuweisungsoperator: von rohem Zeiger
-    SmartPointer& operator=(T* p) {
-        if (ptr != p) {
-            if (--(*refCount) == 0) {
-                delete ptr;
-                delete refCount;
-            }
-            ptr = p;
-            refCount = new int(1);
-        }
-        return *this;
     }
 };
 ```
+
+
 
 ---
 
