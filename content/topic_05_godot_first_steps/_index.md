@@ -91,9 +91,9 @@ In Godot sind die C++-Klassen, die die Bausteine einer Godot-Applikation bilden,
 
 Folgende Tätigkeiten sind durchzuführen
 
-- Die Beschreibung der Klassen in der Godot-Doku lesen.
+- Die Beschreibung der o. g. Klassen in der Godot-Doku lesen.
 - Die Klassen im Godot-Source-Code suchen. Dazu in VS-Code `Ctrl+T` auslösen und nach den Klassennamen suchen.
-- Einen Vererbungsbaum aufstellen, in dem die o. G. Klassen vorkommen
+- Einen Vererbungsbaum aufstellen, in dem die o. g. Klassen vorkommen
 
 Zu beantwortende Fragen
 

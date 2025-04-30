@@ -1,7 +1,6 @@
 +++
 archetype = "home"
 title = "Software-Entwicklung interaktiver Medien"
-date = 2024-09-28T15:27:29+02:00
 draft = false
 weight = 0
 +++
