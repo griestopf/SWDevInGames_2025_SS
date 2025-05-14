@@ -32,12 +32,12 @@ Strukturiere die `main`-Funktion in einen Initialisierungs- und einen Game-Loop-
 Versuche, herauszufinden, wie in Godot der Traversierungsmechanismus des Szenengraphen funktioniert.
 
 - Wo ist die Liste von Kind-Objekten einer Node gespeichert?
-- Finde den Code, der die Schleife enthält, die über die Kindliste iteriert
+- Finde den Code, der die Schleife enthält, die über die Kind-Liste iteriert
   - In welcher Klasse ist diese Methode enthalten?
 - Welche Aktionen werden beim "Besuch" einer Node während der Traversierung ausgelöst?
 - Wie ist die Polymorphie implementiert, also das z. B. beim Besuch einer `MeshInstance3D`-Node anderer Code ausgeführt wird, als beim Besuch einer `Camera3D`-Node?
 
-### Visistor-Pattern? 
+### Visitor-Pattern? 
 
 - Vergleiche den (möglicherweise) in Godot implementierten Polymorphie-Ansatz für Nodes mit dem Visitor-Pattern in der Literatur.
 - Implementiere einen eigenen Ansatz, der sich an Godot, an das Visitor-Pattern oder ein Mittelding daraus anlehnt.

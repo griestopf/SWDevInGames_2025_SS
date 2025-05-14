@@ -99,7 +99,7 @@ Zu beantwortende Fragen
 
 - Warum erbt Node nicht von RefCounted? Welche Implikation in Bezug auf die Speicherveraltung sämtlicher im Szenengraph vorkommenden Objekte ergibt sich daraus?
 - Wie funktioniert das Reference Counting von Ressourcen mittels der Klassen `RefCounted` und `Ref`?
-  - Einblick in den Mechanismus könnte über Degugging in die Methoden `ref` und `unref` gewonnen werden.
+  - Einblick in den Mechanismus könnte über Debugging in die Methoden `ref` und `unref` gewonnen werden.
 - Wer ist "Owner" (im Sinne von Erzeugung und Löschung) sämtlicher in einer Szene lebenden Nodes? 
   - Eine Antwort auf diese Frage könnte ein Breakpoint im Konstruktor und Destruktor von Node oder einer davon abgeleiteten Klasse und ein Umschauen im Call-Stack geben.
 
