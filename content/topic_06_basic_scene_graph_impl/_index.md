@@ -41,3 +41,8 @@ Versuche, herauszufinden, wie in Godot der Traversierungsmechanismus des Szeneng
 
 - Vergleiche den (möglicherweise) in Godot implementierten Polymorphie-Ansatz für Nodes mit dem Visitor-Pattern in der Literatur.
 - Implementiere einen eigenen Ansatz, der sich an Godot, an das Visitor-Pattern oder ein Mittelding daraus anlehnt.
+
+
+## Resourcen
+
+- [Beispiel-Implementierung der Szenengraph-Klassen](https://github.com/griestopf/SWDevInGames_2025_SS/tree/main/_example_code/L04_Scratch)
