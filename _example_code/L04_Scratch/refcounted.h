@@ -8,6 +8,7 @@
 class RefCounted : public Object {
 public:
     RefCounted();
+    RefCounted(std::string new_name);
     ~RefCounted();
 
     // Reference counting methods

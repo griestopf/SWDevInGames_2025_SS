@@ -7,6 +7,10 @@ RefCounted::RefCounted() : ref_count(1) {
     // std::cout << "RefCounted constructor called!" << std::endl;
 }
 
+RefCounted::RefCounted(std::string new_name) : Object(new_name), ref_count(1) {
+    // std::cout << "RefCounted constructor with name called!" << std::endl;
+}
+
 // Destructor
 // TODO: Check if destructor of inherited classes is called.
 RefCounted::~RefCounted() {

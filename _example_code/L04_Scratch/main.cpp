@@ -1,98 +1,59 @@
 #include <iostream>
-
-#include "my_class.h"
-
-
-
 #include <memory>
+#include "meshinstance3d.h"
 
-template <typename T>
-class SmartPointer {
-private:
-    T* ptr;
-    int* ref_count;
 
+class Elter
+{
 public:
-    SmartPointer(T* p = nullptr) : ptr(p), ref_count(new int(1)) {}
-
-    SmartPointer(const SmartPointer& other) : ptr(other.ptr), ref_count(other.ref_count) {
-        (*ref_count)++;
+    virtual void TuWas()
+    {
+        std::cout << "Elter::TuWas aufgerufen" << std::endl;
     }
+};
 
-    SmartPointer& operator=(const SmartPointer& other) {
-        if (this != &other) {
-            release();
-            ptr = other.ptr;
-            ref_count = other.ref_count;
-            (*ref_count)++;
-        }
-        return *this;
-    }
-
-    ~SmartPointer() {
-        release();
-    }
-
-    T* operator->() const {
-        return ptr;
-    }
-
-    T& operator*() const {
-        return *ptr;
-    }
-
-private:
-    void release() {
-        if (--(*ref_count) == 0) {
-            delete ptr;
-            delete ref_count;
-        }
+class Kind : public Elter
+{
+public:
+    virtual void TuWas()
+    {
+        std::cout << "Kind::TuWas aufgerufen" << std::endl;
     }
 };
 
 
-
-
 int main() {
 
-    /*
-    {
-        MyClass my_object(43);
-        my_object.some_value = 42;
-        my_object.some_method();
-    } // Destructor will be called here
+    Elter *elter = new Elter();
+    Kind *kind = new Kind();
 
+    elter->TuWas(); // Aufruf der Methode in der Basisklasse
+    kind->TuWas(); // Aufruf der Methode in der abgeleiteten Klasse
 
-    MyClass *p_my_object = new MyClass(44);
-    p_my_object->some_method();
-    delete p_my_object; // Destructor will be called here
-    */
+    Elter *irgendwas = kind;
+    irgendwas->TuWas(); 
 
-    {
-        MyClass *p_my_object = new MyClass(44);
-        {
-            MyClass *p_my_object2 = p_my_object;
-            p_my_object2->some_value = 42;
-            p_my_object->some_method();
-        }
-    }
+    Node3D* root = new Node3D("Root");
+    Node3D* child1 = new Node3D("Child1");
+    MeshInstance3D* child2 = new MeshInstance3D("Child2");
+    root->addChild(child1);
+    root->addChild(child2);
 
+    MeshInstance3D* grandChild1 = new MeshInstance3D("GrandChild1");
+    child1->addChild(grandChild1);
 
+    MeshInstance3D* grandChild2 = new MeshInstance3D("GrandChild2");
+    child1->addChild(grandChild2);
 
-    {
-        SmartPointer<MyClass> sp_my_object(new MyClass(45));
-        {
-            SmartPointer<MyClass> sp_my_object2 = sp_my_object;
-            sp_my_object2->some_value = 46;
-            sp_my_object->some_method();
-        }
-        sp_my_object->some_value = 47;
-        sp_my_object->some_method();
-    }
+    Ref<Mesh> mesh1 = Ref<Mesh>(new Mesh("Mesh1"));
+    grandChild1->setMesh(mesh1);
 
+    Ref<Mesh> mesh2 = Ref<Mesh>(new Mesh("Mesh2"));
+    grandChild2->setMesh(mesh2);
+    child2->setMesh(mesh1);
 
+    root->render();
 
-
-    std::cout << "Hello, World!" << std::endl;
+    //std::cout << "Hello, World!" << std::endl;
     return 0;
 }

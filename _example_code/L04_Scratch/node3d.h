@@ -7,7 +7,19 @@ class Node3D : public Object
 {
 public:
     Node3D();
+    Node3D(const std::string &new_name);
+
     ~Node3D();
+
+    void addChild(Node3D *child);
+    // get a child by name
+    Node3D *getChild(const std::string &child_name);
+
+    // remove a child by name
+    void removeChild(const std::string &child_name);
+
+    virtual void render();
+
 
 private:
     std::unordered_map<std::string, Node3D *> children;

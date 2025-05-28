@@ -6,6 +6,7 @@
 class Mesh : public RefCounted {
 public:
     Mesh();
+    Mesh(std::string new_name);
     ~Mesh();
 
     // TODO implement mesh data such as vertices, indices, normals, etc.
