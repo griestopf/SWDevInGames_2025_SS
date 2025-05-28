@@ -15,7 +15,7 @@ Ref<Mesh> MeshInstance3D::getMesh() {
 void MeshInstance3D::setMesh(Ref<Mesh> new_mesh) {
     mesh = new_mesh;
 }
-    virtual void render();
+
 void MeshInstance3D::render() {
     // TODO: Implement rendering logic for MeshInstance3D
 }
