@@ -1,8 +1,13 @@
 #ifndef NODE3D_H
 #define NODE3D_H
+
 #include "object.h"
 #include <unordered_map>
 #include <string>
+
+
+class Visitor;
+
 class Node3D : public Object
 {
 public:
@@ -18,11 +23,10 @@ public:
     // remove a child by name
     void removeChild(const std::string &child_name);
 
-    virtual void render();
-    virtual void pick();
-    virtual void save();
-    virtual void find(String name_to_find);
-    
+    virtual void accept(Visitor *visitor);    
+
+protected:
+    void visitChildren(Visitor *visitor);
 
 private:
     std::unordered_map<std::string, Node3D *> children;

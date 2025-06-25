@@ -1,5 +1,7 @@
 #include "meshinstance3d.h"
 
+#include "visitor.h"
+
 MeshInstance3D::MeshInstance3D(const std::string &new_name) : Node3D(new_name) {
     // std::cout << "MeshInstance3D constructor called!" << std::endl;
 }
@@ -17,15 +19,8 @@ void MeshInstance3D::setMesh(Ref<Mesh> new_mesh) {
 }
 
 
-void MeshInstance3D::render() 
+void MeshInstance3D::accept(Visitor *visitor) 
 {
-    if (mesh.get() == nullptr)
-    {
-        std::cout << "No mesh today!" << std::endl;
-    }
-    else
-    {
-        std::cout << "Rendering Mesh: " << mesh.get()->getName() << std::endl;
-    }
-    Node3D::render();
+    visitor->visit(this);
+    visitChildren(visitor);
 }

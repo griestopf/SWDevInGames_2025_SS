@@ -1,6 +1,8 @@
 #include "node3d.h"
 #include <iostream>
 
+#include "visitor.h"
+
 Node3D::Node3D()
 {};
 
@@ -41,18 +43,15 @@ void Node3D::removeChild(const std::string &child_name) {
 }
 
 
-void Node3D::render()
+void Node3D::accept(Visitor *visitor)
 {
-    std::cout << "Rendering Node3D: " << getName() << std::endl;
-    for (const auto &child : children) {
-        child.second->render(); // Recursively render each child
-    }
+    visitor->visit(this);
+    visitChildren(visitor);
 }
 
-void Node3D::pick()
+void Node3D::visitChildren(Visitor *visitor)
 {
-    // std::cout << "Rendering Node3D: " << getName() << std::endl;
     for (const auto &child : children) {
-        child.second->render(); // Recursively render each child
+        child.second->accept(visitor); // Recursively render each child
     }
 }

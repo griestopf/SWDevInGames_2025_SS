@@ -1,57 +1,9 @@
 #include <iostream>
 #include <memory>
 #include "meshinstance3d.h"
-
-
-class Tier
-{
-public:
-    virtual void TuWas()
-    {
-        std::cout << "Tier::TuWas aufgerufen" << std::endl;
-    }
-};
-
-class Katze : public Tier
-{
-public:
-    virtual void TuWas()
-    {
-        std::cout << "Katze::Miau" << std::endl;
-    }    
-};
-
-
-class Hund : public Tier
-{
-public:
-    virtual void TuWas()
-    {
-        std::cout << "Hund::Wuff" << std::endl;
-    }
-};
-
+#include "visitor.h"
 
 int main() {
-
-    /*
-    Tier *tier = new Tier();
-    tier->TuWas(); 
-
-    Katze *katze = new Katze();
-    katze->TuWas();
-    
-    Hund *hund = new Hund();
-    hund->TuWas();
-
-    // Create an array of Tier pointers
-    // and call TuWas on each of them
-    Tier *tiere[] = {tier, katze, hund};
-    for (Tier *t : tiere) {
-        t->TuWas();
-    }
-    */
-
 
     Node3D* root = new Node3D("Root");
     
@@ -77,8 +29,12 @@ int main() {
     child2->setMesh(mesh2);
 
 
+    Renderer *renderer = new Renderer();
+    root->accept(renderer);
 
-    root->render();
+    Serializer *serializer = new Serializer();
+    root->accept(serializer);
+
 
     //std::cout << "Hello, World!" << std::endl;
     return 0;
