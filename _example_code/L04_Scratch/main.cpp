@@ -3,37 +3,58 @@
 #include "meshinstance3d.h"
 
 
-class Elter
+class Tier
 {
 public:
     virtual void TuWas()
     {
-        std::cout << "Elter::TuWas aufgerufen" << std::endl;
+        std::cout << "Tier::TuWas aufgerufen" << std::endl;
     }
 };
 
-class Kind : public Elter
+class Katze : public Tier
 {
 public:
     virtual void TuWas()
     {
-        std::cout << "Kind::TuWas aufgerufen" << std::endl;
+        std::cout << "Katze::Miau" << std::endl;
+    }    
+};
+
+
+class Hund : public Tier
+{
+public:
+    virtual void TuWas()
+    {
+        std::cout << "Hund::Wuff" << std::endl;
     }
 };
 
 
 int main() {
 
-    Elter *elter = new Elter();
-    Kind *kind = new Kind();
+    /*
+    Tier *tier = new Tier();
+    tier->TuWas(); 
 
-    elter->TuWas(); // Aufruf der Methode in der Basisklasse
-    kind->TuWas(); // Aufruf der Methode in der abgeleiteten Klasse
+    Katze *katze = new Katze();
+    katze->TuWas();
+    
+    Hund *hund = new Hund();
+    hund->TuWas();
 
-    Elter *irgendwas = kind;
-    irgendwas->TuWas(); 
+    // Create an array of Tier pointers
+    // and call TuWas on each of them
+    Tier *tiere[] = {tier, katze, hund};
+    for (Tier *t : tiere) {
+        t->TuWas();
+    }
+    */
+
 
     Node3D* root = new Node3D("Root");
+    
     Node3D* child1 = new Node3D("Child1");
     MeshInstance3D* child2 = new MeshInstance3D("Child2");
     root->addChild(child1);
@@ -45,12 +66,17 @@ int main() {
     MeshInstance3D* grandChild2 = new MeshInstance3D("GrandChild2");
     child1->addChild(grandChild2);
 
+    Node3D* grandChild3 = new Node3D("GrandChild3");
+    child2->addChild(grandChild3);
+
     Ref<Mesh> mesh1 = Ref<Mesh>(new Mesh("Mesh1"));
     grandChild1->setMesh(mesh1);
 
     Ref<Mesh> mesh2 = Ref<Mesh>(new Mesh("Mesh2"));
     grandChild2->setMesh(mesh2);
-    child2->setMesh(mesh1);
+    child2->setMesh(mesh2);
+
+
 
     root->render();
 

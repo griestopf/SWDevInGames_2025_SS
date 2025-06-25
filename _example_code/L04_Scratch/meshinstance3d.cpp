@@ -16,6 +16,16 @@ void MeshInstance3D::setMesh(Ref<Mesh> new_mesh) {
     mesh = new_mesh;
 }
 
-void MeshInstance3D::render() {
-    // TODO: Implement rendering logic for MeshInstance3D
+
+void MeshInstance3D::render() 
+{
+    if (mesh.get() == nullptr)
+    {
+        std::cout << "No mesh today!" << std::endl;
+    }
+    else
+    {
+        std::cout << "Rendering Mesh: " << mesh.get()->getName() << std::endl;
+    }
+    Node3D::render();
 }

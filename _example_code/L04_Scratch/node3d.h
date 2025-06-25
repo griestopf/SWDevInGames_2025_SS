@@ -19,7 +19,10 @@ public:
     void removeChild(const std::string &child_name);
 
     virtual void render();
-
+    virtual void pick();
+    virtual void save();
+    virtual void find(String name_to_find);
+    
 
 private:
     std::unordered_map<std::string, Node3D *> children;

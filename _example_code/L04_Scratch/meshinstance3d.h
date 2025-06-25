@@ -1,5 +1,7 @@
 #ifndef MESHINSTANCE3D_H
 #define MESHINSTANCE3D_H
+#include <iostream>
+
 #include "node3d.h"
 #include "ref.h"
 #include "mesh.h"
@@ -13,7 +15,11 @@ public:
     Ref<Mesh> getMesh();
     void setMesh(Ref<Mesh> mesh);
 
-    virtual void render();
+    virtual void render(); 
+    virtual void pick();
+    virtual void save();
+    virtual void find(String name_to_find);
+    
 
 
 private:

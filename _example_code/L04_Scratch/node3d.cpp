@@ -48,3 +48,11 @@ void Node3D::render()
         child.second->render(); // Recursively render each child
     }
 }
+
+void Node3D::pick()
+{
+    // std::cout << "Rendering Node3D: " << getName() << std::endl;
+    for (const auto &child : children) {
+        child.second->render(); // Recursively render each child
+    }
+}
